@@ -6,12 +6,54 @@
         <link rel="stylesheet" href="assets/css/reset.css"> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <title>Russia Trivia Game</title>
     </head>
     <body>
-        
+        <div class = "container-fluid border" id = "mainContainer">
+            <div class = "row" id = "headerRow">
+                <div class = "col-md-12">
+                    <h1>Fun Facts about Russia</h1>
+                    <h2>Trivia Game</h2>
+                    <h3>Play at your own risk.</h3>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-md-12">
+                    <p id = "timeLeft">Time Remaining: </p>
+                    <p>Question: </p>
+                </div>
+            </div>
+            <div class = "row" id = "answerRow">
+                <div class = "col-md-12" id = "answerOptions">
+                    <h2 id = "activeQuestion">What is the current population of Russia (July 2017 est.)?</h2>
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-warning" id = "correctAnswer">142 million</button>
+                        <button type="button" class="list-group-item list-group-item-warning">187 million</button>
+                        <button type="button" class="list-group-item list-group-item-warning">132 million</button>
+                        <button type="button" class="list-group-item list-group-item-warning">201 million</button>
+                      </div>
+                    <div><img></div>
+                </div>
+            </div>
 
+
+
+
+
+
+        <!-- You'll create a trivia game that shows only one question until the player answers it or their time runs out.
+
+        If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
+        
+        The scenario is similar for wrong answers and time-outs.
+        
+        If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question.
+        If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer. Wait a few seconds, then show the next question.
+        On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page). -->
+        </div>
         <script src = "assets/javascript/game.js"></script>
     </body>
 </html>
