@@ -37,3 +37,12 @@ p {
     font-weight: bolder;
     text-decoration-line: underline;
 }
+#gameOverRow {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#questionScreenQuestion {
+    font-size: 28px;
+    font-weight: lighter;
+}
