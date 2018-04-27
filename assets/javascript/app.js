@@ -12,8 +12,8 @@ var triviaSetArray= [
     "Who was the president before Vladimir Putin?; Boris Yeltsin; Mikhail Gorbachev, Alexander Rutskoi, Gennady Zyuganov, Boris Yeltsin", 
     "What alphabet is used in Russia?; Cyrillic; Latin, Greek, Cyrillic, Hebrew", 
     "What is the current unemployment rate (2017 est.)?; 5.5%; 7%, 14%, 3.5%, 5.5%", 
-    "What is the current GDP per capita (2017 est.)?; $27,900; $32,600, $25,700, $27,900, $34,200", 
-    "How many time zones does Russia have?; 9; 7, 5,9, 4",
+    // "What is the current GDP per capita (2017 est.)?; $27,900; $32,600, $25,700, $27,900, $34,200", 
+    "How many time zones does Russia have?; 9; 7, 5, 9, 4",
     "What is the most popular holiday in Russia?; New Year’s Day; Victory Day, International Women’s Day, New Year’s Day, FatherLand Defender’s Day"];
 
 function startGame(){
@@ -94,7 +94,7 @@ function showTriviaQuestion(triviaAsString){
     {
         var possibleAnswerText = optionsArray[i];
         var buttonHtml = 
-            "<button type='button' class='list-group-item list-group-item-action' onclick='checkTriviaAnswer()'>"
+            "<button type='button' class='list-group-item list-group-item-action' onclick='checkTriviaAnswer(this.innerHTML)'>"
             + possibleAnswerText  
             + "</button>";
         //Add button to container
@@ -102,11 +102,9 @@ function showTriviaQuestion(triviaAsString){
     }
 };
 
-function checkTriviaAnswer(){
+function checkTriviaAnswer(selectedAnswer){
     //Stop countdown interval timer since the user selected an answer
     window.clearInterval(currentTimerId);
-
-    var selectedAnswer = this.innerHTML;
 
     if(selectedAnswer === currentTriviaAnswer){
         correctAnswers++;
@@ -143,7 +141,7 @@ function goToResults(answerWasCorrect){
         $('#resultsScreenWrong').show();
     }
 
-    currentTimerId = window.setTimeout(shownNextTrivia, 3000);
+    currentTimerId = window.setTimeout(shownNextTrivia, 1500);
 };
 
 function goToGameOver(){
@@ -151,6 +149,8 @@ function goToGameOver(){
 
     $('#gameOverScreenCorrectAnswers').text(correctAnswers);
     $('#gameOverScreenMissedAnswers').text(missedAnswers);
+    currentTimerId = window.setTimeout(startGame, 4000);
+
 };
     
 function showStartGame(){
